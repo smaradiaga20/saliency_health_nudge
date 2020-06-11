@@ -1,0 +1,3 @@
+otree>=2.1.28
+django-heroku
+whitenoise==3.2.1
