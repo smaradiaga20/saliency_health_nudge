@@ -23,7 +23,7 @@
         <div class="image-row">
         {% for image in images %}
             <div class="image-cell">
-                <img src="{{image.path}}" class="hazy" />
+                <img src="{{image.path}}" class="hazy region" id={{forloop.counter}} />
             </div>
             {% if image.brnext %}
          </div>
@@ -34,4 +34,16 @@
     </div>
     {% next_button %}
 
+{% endblock %}
+
+
+{% block scripts %}
+<script type="text/javascript">
+
+jQuery(document).on('mouseover','region', function(e){
+
+liveSend({'region': e.currentTarget.id, timestamp: Date.now()});
+    
+});
+</script>
 {% endblock %}
