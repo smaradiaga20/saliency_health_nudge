@@ -40,10 +40,18 @@
 {% block scripts %}
 <script type="text/javascript">
 
-jQuery(document).on('mouseover','region', function(e){
+jQuery(document).on('mouseover','.region', function(e){
 
-liveSend({'region': e.currentTarget.id, timestamp: Date.now()});
+liveSend({'region': e.currentTarget.id, 'action': 'enter', 'timestamp': Date.now()});
     
 });
+
+jQuery(document).on('mouseout','.region', function(e){
+
+liveSend({'region': e.currentTarget.id, 'action': 'exit', 'timestamp': Date.now()});
+    
+});
+
+function liveRecv(payload){ console.log(payload)};
 </script>
 {% endblock %}

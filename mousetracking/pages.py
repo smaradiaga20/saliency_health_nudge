@@ -8,6 +8,7 @@ class MyPage(Page):
     pass
 
 class Grid(Page):
+    live_method = 'live_event'
     def vars_for_template(self):
         images = []
         for i in range(1,10):

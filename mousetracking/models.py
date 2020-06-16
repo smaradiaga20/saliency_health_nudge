@@ -2,7 +2,6 @@ from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer, ExtraModel,
     Currency as c, currency_range
 )
-import json
 
 author = 'Your name here'
 
@@ -25,12 +24,13 @@ class Subsession(BaseSubsession):
 
 class Group(BaseGroup):
     def live_event(self, id_in_group, payload):
-        player = self.get_player_by__id(id_in_group)
-        json_object = json.decode(payload)
-        timestamp = json_object['timestamp']
-        region = json_object['region']
-        mouse_event = MouseEvent.objects.create(player=player, timestamp=timestamp, region=region)
+        player = self.get_player_by_id(id_in_group)
+        timestamp = payload['timestamp']
+        region = payload['region']
+        action = payload['action']
+        mouse_event = MouseEvent.objects.create(player=player, timestamp=timestamp, region=region, action=action)
         mouse_event.save()
+        return {id_in_group: "created mouse_event %d" % mouse_event.id}
     
 
 class Player(BasePlayer):
@@ -43,10 +43,11 @@ class MouseEvent(ExtraModel):
     player = models.Link(Player)
     region = models.IntegerField()
     timestamp = models.IntegerField()
+    action = models.StringField()
 
 
 def custom_export(players):
-    yield ['session','participant_code','stimulus','region','timestamp']
+    yield ['session','participant_code','stimulus','region','action', 'timestamp']
     for p in players:
         for m in p.mouse_events():
-            yield [p.session.code, p.participant.code, p.stimulus, m.region, m.timestamp]
+            yield [p.session.code, p.participant.code, p.stimulus, m.region, m.action, m.timestamp]
