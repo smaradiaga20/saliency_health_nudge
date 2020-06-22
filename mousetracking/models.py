@@ -2,13 +2,6 @@ from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer, ExtraModel,
     Currency as c, currency_range
 )
-<<<<<<< HEAD
-<<<<<<< HEAD
-import json
-=======
->>>>>>> 4bc3b9eb19b7063c1f07aa282c3ed5e7e45f7086
-=======
->>>>>>> 4bc3b9eb19b7063c1f07aa282c3ed5e7e45f7086
 
 author = 'Your name here'
 
