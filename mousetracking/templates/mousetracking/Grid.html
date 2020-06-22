@@ -11,6 +11,7 @@
         img.hazy { filter: blur(5px); max-width: 100%;}
         img.hazy:hover { filter: blur(0px);}
         .image-whole {width: 100%; position: relative;}
+        .image-parts {width: 100%; position: absolute; top: 0; left: 0;}
         .image-row {display: flex; width: 100%}
         .image-cell {flex-basis: auto; flex-shrink: 1;}
     </style>
@@ -20,6 +21,8 @@
 {% block content %}
 
     <div class="image-whole">
+        <img src={{whole_image.path}} class="image hazy">
+        <div class="image-parts">
         <div class="image-row">
         {% for image in images %}
             <div class="image-cell">
@@ -30,6 +33,7 @@
          <div class="image-row">
             {% endif %}
         {% endfor %}
+        </div>
         </div>
     </div>
     {% next_button %}
