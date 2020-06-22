@@ -40,10 +40,26 @@
 {% block scripts %}
 <script type="text/javascript">
 
+<<<<<<< HEAD
 jQuery(document).on('mouseover','region', function(e){
 
 liveSend({'region': e.currentTarget.id, timestamp: Date.now()});
     
 });
+=======
+jQuery(document).on('mouseover','.region', function(e){
+
+liveSend({'region': e.currentTarget.id, 'action': 'enter', 'timestamp': Date.now()});
+    
+});
+
+jQuery(document).on('mouseout','.region', function(e){
+
+liveSend({'region': e.currentTarget.id, 'action': 'exit', 'timestamp': Date.now()});
+    
+});
+
+function liveRecv(payload){ console.log(payload)};
+>>>>>>> 4bc3b9eb19b7063c1f07aa282c3ed5e7e45f7086
 </script>
 {% endblock %}

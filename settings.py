@@ -81,7 +81,7 @@ MIDDLEWARE = [
     # https://warehouse.python.org/project/whitenoise/
     'whitenoise.middleware.WhiteNoiseMiddleware',
     ]
-'''
+
 DATABASES = {
     'default': {
          'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -92,4 +92,3 @@ DATABASES = {
          'PORT': '5432',
         } 
    }
-'''
