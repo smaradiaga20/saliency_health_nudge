@@ -30,7 +30,7 @@ class Group(BaseGroup):
         action = payload['action']
         mouse_event = MouseEvent.objects.create(player=player, timestamp=timestamp, region=region, action=action)
         mouse_event.save()
-        return {id_in_group: "created mouse_event %d" % mouse_event.id}
+        #return {id_in_group: "created mouse_event %d" % mouse_event.id}
     
 
 class Player(BasePlayer):
