@@ -2,7 +2,7 @@ from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer, ExtraModel,
     Currency as c, currency_range
 )
-
+from django.db.models import BigIntegerField
 author = 'Your name here'
 
 doc = """
@@ -43,7 +43,7 @@ class MouseEvent(ExtraModel):
     player = models.Link(Player)
     region = models.IntegerField()
     action = models.StringField()
-    timestamp = models.IntegerField()
+    timestamp = BigIntegerField()
 
 
 def custom_export(players):
