@@ -7,6 +7,7 @@ from django.contrib.staticfiles.templatetags.staticfiles import static
 class MyPage(Page):
     pass
 
+'''
 class Grid(Page):
     live_method = 'live_event'
     def vars_for_template(self):
@@ -31,8 +32,8 @@ class Grid(Page):
             images.append(image)
         return { 'image': {'path': static("mousetracking/chickenkiev/original.jpg"),},
                  'regions': images,}
-
-class Grid2(Page):
+'''
+class Grid(Page):
     live_method = 'live_event'
     def vars_for_template(self):
         images = []
@@ -55,5 +56,5 @@ class Results(Page):
 
 
 page_sequence = [
-    Grid2
+    Grid
 ]
