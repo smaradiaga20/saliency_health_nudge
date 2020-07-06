@@ -46,6 +46,9 @@ class Grid(Page):
         return { 'whole_image': {'path': static("mousetracking/chickenkiev/original.jpg"),},
                  'images': images,}
 
+class Grid2(Page):
+    live_method = 'live_event'
+
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
         pass
@@ -56,5 +59,5 @@ class Results(Page):
 
 
 page_sequence = [
-    Grid
+    Grid2,
 ]

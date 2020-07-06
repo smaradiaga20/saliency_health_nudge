@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static mousetracking_extras %}
+
+{% block title %}
+    Example Page
+{% endblock %}
+
+
+{% block styles %}
+    <style type="text/css">
+        img.blurred { filter: blur(5px); max-width: 100%;}
+        .mousetracking-stimulus {width: 100%; position: relative;}
+        .image-parts {width: 100%; position: absolute; top: 0; left: 0;}
+        .image-row {display: flex; width: 100%}
+        .image-cell {flex-basis: auto; flex-shrink: 1;}
+        .region {max-width: 100%; opacity: 0;}
+        .region:hover { opacity: 1;}
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+
+       {% track_mouse 'chickenkiev' 3 3 %}
+
+    {% next_button %}
+
+{% endblock %}
