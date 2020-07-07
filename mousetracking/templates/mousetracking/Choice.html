@@ -8,9 +8,16 @@
 
 {% block content %}
 
-
+<div class="row">
+    <div class="col-5">
        {% track_mouse player.stimulus 3 3 %}
-
+    </div>
+    <div class="col-5">
+       {% track_mouse player.stimulus_2 3 3 %}
+    </div>
+</div>
+        
+    {% formfield player.choice %}
     {% next_button %}
 
 {% endblock %}

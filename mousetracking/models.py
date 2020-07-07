@@ -15,14 +15,14 @@ Your app description
 class Constants(BaseConstants):
     name_in_url = 'mousetracking'
     players_per_group = None
-    num_rounds = 1
-
+    num_rounds = 2
+    stimulus_list = ['chicken_kiev','Pepperoni_Pizza_Color_Left',]
 
 class Subsession(BaseSubsession):
     def creating_session(self):
         for p in self.get_players():
-            p.stimulus = "chicken kiev"
-
+            p.stimulus = Constants.stimulus_list[(p.round_number - 1) % 2]
+            p.stimulus_2 = Constants.stimulus_list[p.round_number % 2]
 
 class Group(MouseTrackingGroup):
     pass
@@ -30,3 +30,5 @@ class Group(MouseTrackingGroup):
 
 class Player(MouseTrackingPlayer):
     stimulus = models.StringField()
+    stimulus_2 = models.StringField()
+    choice = models.StringField()

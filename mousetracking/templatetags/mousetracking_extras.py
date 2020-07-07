@@ -9,11 +9,11 @@ register = template.Library()
 def track_mouse(stimulus_name,num_rows,num_columns):
     #produce the html, possibly with also the necessary css and javascript so its all self contained
     num_slices = num_rows * num_columns
-    whole_stimulus_path = static("mousetracking/%s/whole.jpg" %  stimulus_name)
+    whole_stimulus_path = static("mousetracking/%s.jpg" %  stimulus_name)
     
     slices = []
     for i in range(1,num_slices + 1):
-        part = static("mousetracking/%s/%d.jpg" % (stimulus_name, i))
+        part = static("mousetracking/%s_0%d.jpg" % (stimulus_name, i))
         slices.append(part)
     
     html = format_html("""
@@ -41,7 +41,7 @@ def track_mouse(stimulus_name,num_rows,num_columns):
                 </div>
             </div>
         </div>''')
-    
+    '''   
     html += format_html("""
     <script type="text/javascript">
     
@@ -55,5 +55,5 @@ def track_mouse(stimulus_name,num_rows,num_columns):
         }});                                                                                  
     function liveRecv(payload){{ console.log(payload)}};
     </script>""", stimulus_name)
-    
+    '''    
     return html

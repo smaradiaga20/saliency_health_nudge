@@ -1,12 +1,7 @@
 {% extends "global/Page.html" %}
 {% load otree static mousetracking_extras %}
 
-{% block title %}
-    Example Page
-{% endblock %}
-
-
-{% block styles %}
+{% block app_styles %}
     <style type="text/css">
         img.blurred { filter: blur(5px); max-width: 100%;}
         .mousetracking-stimulus {width: 100%; position: relative;}
@@ -19,11 +14,16 @@
 {% endblock %}
 
 
-{% block content %}
-
-
-       {% track_mouse 'chickenkiev' 3 3 %}
-
-    {% next_button %}
-
+{% block app_scripts %}
+<script type="text/javascript">
+	jQuery(document).on('mouseover','.region',
+			function(e){
+				liveSend({'region': e.currentTarget.id, 'action': 'enter', 'timestamp': Date.now()});
+			});
+    jQuery(document).on('mouseout','#{} .region',
+			function(e){
+				liveSend({'region': e.currentTarget.id, 'action': 'exit', 'timestamp': Date.now()});
+			});
+    function liveRecv(payload){ console.log(payload) };
+</script>
 {% endblock %}
