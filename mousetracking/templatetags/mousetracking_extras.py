@@ -26,9 +26,9 @@ def track_mouse(stimulus_name,num_rows,num_columns):
     for i, part in enumerate(slices, 1):
         html += format_html("""
                 <div class="image-cell">
-                    <img src="{}" class="region" id="{}" />
+                    <img src="{}" class="region" id="{}" data-stimulus="{}" />
                 </div>
-        """, part, i)
+        """, part, i, stimulus_name)
         
         if i % num_columns == 0:
             html += mark_safe("""

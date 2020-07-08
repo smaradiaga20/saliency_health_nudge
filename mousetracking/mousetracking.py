@@ -11,7 +11,8 @@ class MouseTrackingGroup(BaseGroup):
         timestamp = payload['timestamp']
         region = payload['region']
         action = payload['action']
-        mouse_event = MouseEvent.objects.create(player=player, timestamp=timestamp, region=region, action=action)
+        stimulus = payload['stimulus']
+        mouse_event = MouseEvent.objects.create(player=player, timestamp=timestamp, region=region, action=action, stimulus=stimulus)
         mouse_event.save()
 
     class Meta:
@@ -29,13 +30,14 @@ class MouseEvent(ExtraModel):
     #player = models.Link(MouseTrackingPlayer)
     #player = ForeignKey('mousetracking.Player')
     player = models.Link('mousetracking.Player')
+    stimulus = models.StringField()
     region = models.IntegerField()
     action = models.StringField()
     timestamp = BigIntegerField()
 
 
 def custom_export(players):
-    yield ['session','participant_code','stimulus','region','action', 'timestamp']
+    yield ['session','participant_code','round_number', 'stimulus','region','action', 'timestamp']
     for p in players:
         for m in p.mouse_events():
-            yield [p.session.code, p.participant.code, p.stimulus, m.region, m.action, m.timestamp]
+            yield [p.session.code, p.participant.code, p.round_number, m.stimulus, m.region, m.action, m.timestamp]

@@ -8,6 +8,7 @@ class Grid(Page):
     live_method = 'live_event'
 
 class Choice(Page):
+    live_method = 'live_event'
     form_model = 'player'
     form_fields = ['choice']
 

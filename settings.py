@@ -65,7 +65,7 @@ LANGUAGE_CODE = 'en'
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
-ADMIN_PASSWORD = 'yr29khtiRlA1'
+ADMIN_PASSWORD = 'demo'
 
 DEMO_PAGE_INTRO_HTML = """ """
 
