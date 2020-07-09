@@ -11,7 +11,7 @@ To work with the code, the stimuli must meet the following requirements:
 ```
 stim_01.jpg  |  stim_02.jpg  |  stim_03.jpg
 --------------------------------------------
-stim_04.jpg	 |  stim_05.jpg  |  stim_06.jpg
+stim_04.jpg  |  stim_05.jpg  |  stim_06.jpg
 --------------------------------------------
 stim_07.jpg  |  stim_08.jpg  |  stim_09.jpg
 
