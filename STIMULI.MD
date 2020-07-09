@@ -8,14 +8,14 @@ To work with the code, the stimuli must meet the following requirements:
  * follow the following naming conventions:
     * stimulus_name.jpg for the whole stimulus image for blurring
 	* stimulus_name_01.jpg, stimulus_name_02.jpg, stimulus_name_03.jpg, etc for each part, counting from top left across rows then down columns:
-    ```
+```
 stim_01.jpg  |  stim_02.jpg  |  stim_03.jpg
 --------------------------------------------
 stim_04.jpg	 |  stim_05.jpg  |  stim_06.jpg
 --------------------------------------------
 stim_07.jpg  |  stim_08.jpg  |  stim_09.jpg
 
-    ```
+```
 
 ## Suggested Process for Slicing and Naming Stimuli
 
