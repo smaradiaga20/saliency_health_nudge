@@ -21,12 +21,12 @@ stim_07.jpg  |  stim_08.jpg  |  stim_09.jpg
 
 The naming conventions are taken from the defaults that photoshop produces. I don't have Photoshop myself, so cannot give you a fully joined-up step by step guide.  However, I found a couple of tutorials that walk through the necessary steps:
 
-		How to make guides:
+**How to make guides**
 
-		https://www.youtube.com/watch?v=ZRkk-q-L654
+https://www.youtube.com/watch?v=ZRkk-q-L654
 
-		Create slices from guides (see steps 1 and 2 only):
+**Create slices from guides (see steps 1 and 2 only)**
 
-		https://www.webucator.com/how-to/how-work-with-type-adobe-photoshop.cfm#:~:text=Go%20to%20the%20Toolbar%20%2C%20click,that%20need%20to%20be%20excluded.
+https://www.webucator.com/how-to/how-work-with-type-adobe-photoshop.cfm#:~:text=Go%20to%20the%20Toolbar%20%2C%20click,that%20need%20to%20be%20excluded.
 
-		Then to save the files, go to the File menu > Export > Save for Web (Legacy) and choose [images only] as the "format" option, and [all slices] in the "slices" option. Assuming you start with a jpg for the whole stimulus image, it should produce the slices with the necessary suffixes automatically. It will also guarantee the rows are the correct heights. 
+Then to save the files, go to the File menu > Export > Save for Web (Legacy) and choose [images only] as the "format" option, and [all slices] in the "slices" option. Assuming you start with a jpg for the whole stimulus image, it should produce the slices with the necessary suffixes automatically. It will also guarantee the rows are the correct heights. 
