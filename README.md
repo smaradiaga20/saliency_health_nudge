@@ -20,7 +20,7 @@ Any of these arguments can be hard coded into the template (as num_columns and n
 
 **Grid.html**  This template simply presents the stimulus set and records mouse interactions. There is no decision variable on this page.
 
-**Choice.html** This template presents two stimuli side by side, demonstrating the auto-resizing feature of the track_mouse template tag.  If larger stimuli are needed for comparrison, changing this file to display the stimuli each on their own rows can be done by changing the 'col-5' classes to 'col-12'.  (This page, and otree templates in general, use the bootstrap library for formatting. 
+**Choice.html** This template presents two stimuli side by side, demonstrating the auto-resizing feature of the track_mouse template tag.  If larger stimuli are needed for comparrison, changing this file to display the stimuli each on their own rows can be done by changing the `col-5` classes to `col-12`.  (This page, and otree templates in general, use the bootstrap library for formatting. 
 
 Choice.html also shows the use of the `{% formfield %}` template tag to create a dropdown.  If you would prefer this choice to be radio buttons, changing models.py so that `choice = ChoiceField(widget=widgets.RadioSelect())` will make that happen automatically.
 
