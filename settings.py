@@ -47,7 +47,7 @@ REAL_WORLD_CURRENCY_CODE = 'GBP'
 USE_POINTS = False
  
 
-INSTALLED_APPS = ['otree', 'django.contrib.humanize']
+INSTALLED_APPS = ['otree', 'django.contrib.humanize', 'mousetracking']
 
 ROOMS = [
     {

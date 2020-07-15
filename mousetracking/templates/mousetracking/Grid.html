@@ -9,7 +9,9 @@
 {% block content %}
 
 
-       {% track_mouse player.stimulus 3 3 %}
+       {% track_mouse player.stimulus 21 3 player.exclude_options "png" %}
+
+        {% formfield player.choice %}
 
     {% next_button %}
 
