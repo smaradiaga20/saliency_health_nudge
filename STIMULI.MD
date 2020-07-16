@@ -1,7 +1,7 @@
 # Stimuli Requirements
 To work with the code, the stimuli must meet the following requirements:
  * each stimulus should have a single image that shows the whole stimulus (this will be blurred by the code), as well as separate images for each part
- * all images should be saved as jpg files
+ * all images should be saved as jpg or png files
  * all rows must contain the same number of images
  * every image in an individual row must be exactly the same height
  * try to have no full images smaller than 900px wide, otherwise they will be scaled up by the code and look bad.  Larger images should scale down fine.
@@ -16,6 +16,9 @@ stim_04.jpg  |  stim_05.jpg  |  stim_06.jpg
 stim_07.jpg  |  stim_08.jpg  |  stim_09.jpg
 
 ```
+
+Note that the default is to have 3 columns, but it is possible to setthis to a different number for each trial.
+
 
 ## Suggested Process for Slicing and Naming Stimuli
 
